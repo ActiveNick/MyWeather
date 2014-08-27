@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+			 x:Class="MyWeather.WeatherXaml"
+			 BackgroundImage="greenfieldback.jpg">
+
+    <Grid Padding="20,50,20,50" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <StackLayout Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Spacing="10" HorizontalOptions="FillAndExpand">
+
+            <Entry x:Name="txtLocation" Text="Seattle, WA" HorizontalOptions="FillAndExpand"/>
+            <Button Text="Get Weather" Clicked="OnGetWeatherClicked" HorizontalOptions="FillAndExpand"/>
+            <Label x:Name="lblTemp" Text="Temperature:" TextColor="White" HorizontalOptions="FillAndExpand"/>
+            <Label x:Name="lblHighTemp" Text="High:" TextColor="White" HorizontalOptions="FillAndExpand"/>
+            <Label x:Name="lblLowTemp" Text="Low:" TextColor="White" HorizontalOptions="FillAndExpand"/>
+        </StackLayout>
+
+        <Label Grid.Row="2" Grid.Column="1" x:Name="lblTempBig" Text="" TextColor="White" HorizontalOptions="End">
+            <Label.Font>
+                <OnPlatform x:TypeArguments="Font">
+                    <OnPlatform.iOS>84</OnPlatform.iOS>
+                    <OnPlatform.Android>96</OnPlatform.Android>
+                    <OnPlatform.WinPhone>128</OnPlatform.WinPhone>
+                </OnPlatform>
+            </Label.Font>
+        </Label>
+    </Grid>
+</ContentPage>
