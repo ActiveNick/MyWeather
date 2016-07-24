@@ -1,9 +1,9 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
-using MonoTouch.Foundation;
-using MonoTouch.UIKit;
+using Foundation;
+using UIKit;
 
 using Xamarin.Forms;
 
@@ -12,8 +12,8 @@ namespace MyWeather.iOS
     // The UIApplicationDelegate for the application. This class is responsible for launching the 
     // User Interface of the application, as well as listening (and optionally responding) to 
     // application events from iOS.
-    [Register("AppDelegate")]
-    public partial class AppDelegate : UIApplicationDelegate
+    [Foundation.Register("AppDelegate")]
+    public partial class AppDelegate : global::Xamarin.Forms.Platform.iOS.FormsApplicationDelegate
     {
         // class-level declarations
         UIWindow window;
@@ -27,15 +27,10 @@ namespace MyWeather.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
-            Forms.Init();
+            global::Xamarin.Forms.Forms.Init();
+            LoadApplication(new MyWeather.App());
 
-            window = new UIWindow(UIScreen.MainScreen.Bounds);
-
-            window.RootViewController = App.GetMainPage().CreateViewController();
-
-            window.MakeKeyAndVisible();
-
-            return true;
+            return base.FinishedLaunching(app, options);
         }
     }
 }

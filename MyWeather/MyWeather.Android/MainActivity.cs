@@ -12,7 +12,7 @@ using Xamarin.Forms.Platform.Android;
 namespace MyWeather.Droid
 {
     [Activity(Label = "MyWeather", MainLauncher = true)]
-    public class MainActivity : AndroidActivity
+    public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsApplicationActivity
     {
         protected override void OnCreate(Bundle bundle)
         {
@@ -20,7 +20,8 @@ namespace MyWeather.Droid
 
             Xamarin.Forms.Forms.Init(this, bundle);
 
-            SetPage(App.GetMainPage());
+            // SetPage(App.GetMainPage()); This is now obsolete
+            LoadApplication(new MyWeather.App());
         }
     }
 }

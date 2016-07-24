@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
@@ -9,7 +9,8 @@ namespace MyWeather
 {
     class OpenWeatherMapService
     {
-        private const string APIUrl = "http://api.openweathermap.org/data/2.5/weather?q={0}&units=imperial";
+        private const string APIKey = "b843f18aa40c5e8ad3471058123600f3";
+        private const string APIUrl = "http://api.openweathermap.org/data/2.5/weather?q={0}&units=imperial&APPID=" + APIKey;
         public async Task<WeatherRoot> GetWeather(string location)
         {
             var client = new HttpClient();

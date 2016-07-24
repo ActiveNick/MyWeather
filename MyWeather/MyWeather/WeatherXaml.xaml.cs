@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,13 +7,13 @@ using Xamarin.Forms;
 
 namespace MyWeather
 {
-	public partial class WeatherXaml
-	{
+	public partial class WeatherXaml : ContentPage
+    {
         OpenWeatherMapService owms;
 
-		public WeatherXaml ()
+		public WeatherXaml()
 		{
-			InitializeComponent ();
+			InitializeComponent();
 
             owms = new OpenWeatherMapService();
 		}
@@ -27,10 +27,10 @@ namespace MyWeather
                 var wr = await owms.GetWeather(location);
                 if (wr != null)
                 {
-                    lblTemp.Text = String.Format("Temperature: {0}°F", (int)wr.MainWeather.Temp);
-                    lblTempBig.Text = String.Format("{0}°", (int)wr.MainWeather.Temp);
-                    lblHighTemp.Text = String.Format("High: {0}°F", (int)wr.MainWeather.MaximumTemp);
-                    lblLowTemp.Text = String.Format("Low: {0}°F", (int)wr.MainWeather.MinimumTemp);
+                    lblTemp.Text = String.Format("Temperature: {0}°F", (int)wr.main.temp);
+                    lblTempBig.Text = String.Format("{0}°", (int)wr.main.temp);
+                    lblHighTemp.Text = String.Format("High: {0}°F", (int)wr.main.temp_max);
+                    lblLowTemp.Text = String.Format("Low: {0}°F", (int)wr.main.temp_min);
 
                     // TEXT-TO-SPEECH INTEGRATION
                     string greeter = "";
@@ -42,7 +42,7 @@ namespace MyWeather
                     greeter = "This is the voice of Google";
 #endif
                     string weatherMessageTemplate = "{0}. The current temperature in {1} is {2}°F, with a high today of {3}° and a low of {4}°.";
-                    string weatherMessage = string.Format(weatherMessageTemplate, greeter, wr.Name, (int)wr.MainWeather.Temp, (int)wr.MainWeather.MaximumTemp, (int)wr.MainWeather.MinimumTemp);
+                    string weatherMessage = string.Format(weatherMessageTemplate, greeter, wr.name, (int)wr.main.temp, (int)wr.main.temp_max, (int)wr.main.temp_min);
                     DependencyService.Get<ITextToSpeech>().Speak(weatherMessage);
                 }
 
@@ -50,7 +50,7 @@ namespace MyWeather
             catch (Exception ex)
             {
                 //TO DO: Log the exception somewhere
-                DisplayAlert("Error", "Unable to retrieve weather data. Please verify the city name and your Internet connection and try again.", "Ok", "");
+                await DisplayAlert("Error", "Unable to retrieve weather data. Please verify the city name and your Internet connection and try again.", "Ok");
             }
         }
 	}

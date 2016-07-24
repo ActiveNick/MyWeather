@@ -1,5 +1,5 @@
 using System;
-using MonoTouch.AVFoundation;
+using AVFoundation;
 using Xamarin.Forms;
 using MyWeather.iOS;
 
@@ -18,7 +18,7 @@ namespace MyWeather.iOS
 
             var speechUtterance = new AVSpeechUtterance(text)
             {
-                Rate = AVSpeechUtterance.MaximumSpeechRate / 4,
+                Rate = AVSpeechUtterance.MaximumSpeechRate / 2,
                 Voice = AVSpeechSynthesisVoice.FromLanguage("en-US"),
                 Volume = 0.5f,
                 PitchMultiplier = 1.0f

@@ -1,8 +1,8 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.TA9650HUIR" />
   <MonoDevelop.Ide.Workbench ActiveDocument="MyWeather\MyWeather\WeatherXaml.xaml">
     <Files>
-      <File FileName="MyWeather\MyWeather\WeatherXaml.xaml" Line="6" Column="65" />
+      <File FileName="MyWeather\MyWeather\WeatherXaml.xaml" Line="40" Column="40" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

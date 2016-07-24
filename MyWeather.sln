@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.30723.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyWeather.WinPhone", "MyWeather\MyWeather.WinPhone\MyWeather.WinPhone.csproj", "{2B15F04D-5BEA-418E-B702-23C53ED718E5}"
 EndProject
@@ -75,7 +75,6 @@ Global
 		{2B15F04D-5BEA-418E-B702-23C53ED718E5}.AppStore|x86.Deploy.0 = Release|x86
 		{2B15F04D-5BEA-418E-B702-23C53ED718E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2B15F04D-5BEA-418E-B702-23C53ED718E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2B15F04D-5BEA-418E-B702-23C53ED718E5}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
 		{2B15F04D-5BEA-418E-B702-23C53ED718E5}.Debug|ARM.ActiveCfg = Debug|ARM
 		{2B15F04D-5BEA-418E-B702-23C53ED718E5}.Debug|ARM.Build.0 = Debug|ARM
 		{2B15F04D-5BEA-418E-B702-23C53ED718E5}.Debug|ARM.Deploy.0 = Debug|ARM
@@ -127,9 +126,9 @@ Global
 		{0D9636CD-6130-4C4E-8846-9AA8BCBB0536}.AppStore|x86.ActiveCfg = AppStore|iPhone
 		{0D9636CD-6130-4C4E-8846-9AA8BCBB0536}.Debug|Any CPU.ActiveCfg = Debug|iPhone
 		{0D9636CD-6130-4C4E-8846-9AA8BCBB0536}.Debug|ARM.ActiveCfg = Debug|iPhone
-		{0D9636CD-6130-4C4E-8846-9AA8BCBB0536}.Debug|iPhone.ActiveCfg = Debug|iPhone
-		{0D9636CD-6130-4C4E-8846-9AA8BCBB0536}.Debug|iPhone.Build.0 = Debug|iPhone
-		{0D9636CD-6130-4C4E-8846-9AA8BCBB0536}.Debug|iPhone.Deploy.0 = Debug|iPhone
+		{0D9636CD-6130-4C4E-8846-9AA8BCBB0536}.Debug|iPhone.ActiveCfg = Debug|iPhoneSimulator
+		{0D9636CD-6130-4C4E-8846-9AA8BCBB0536}.Debug|iPhone.Build.0 = Debug|iPhoneSimulator
+		{0D9636CD-6130-4C4E-8846-9AA8BCBB0536}.Debug|iPhone.Deploy.0 = Debug|iPhoneSimulator
 		{0D9636CD-6130-4C4E-8846-9AA8BCBB0536}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
 		{0D9636CD-6130-4C4E-8846-9AA8BCBB0536}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
 		{0D9636CD-6130-4C4E-8846-9AA8BCBB0536}.Debug|iPhoneSimulator.Deploy.0 = Debug|iPhoneSimulator
@@ -175,6 +174,8 @@ Global
 		{476794C3-A75B-4926-8672-CB52A0526909}.Debug|ARM.ActiveCfg = Debug|Any CPU
 		{476794C3-A75B-4926-8672-CB52A0526909}.Debug|iPhone.ActiveCfg = Debug|Any CPU
 		{476794C3-A75B-4926-8672-CB52A0526909}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{476794C3-A75B-4926-8672-CB52A0526909}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{476794C3-A75B-4926-8672-CB52A0526909}.Debug|iPhoneSimulator.Deploy.0 = Debug|Any CPU
 		{476794C3-A75B-4926-8672-CB52A0526909}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
 		{476794C3-A75B-4926-8672-CB52A0526909}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
 		{476794C3-A75B-4926-8672-CB52A0526909}.Debug|Mixed Platforms.Deploy.0 = Debug|Any CPU
@@ -192,5 +193,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = MyWeather\MyWeather.Android\MyWeather.Android.csproj
 	EndGlobalSection
 EndGlobal
