@@ -6,22 +6,21 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
-
+using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 
 namespace MyWeather.Droid
 {
     [Activity(Label = "MyWeather", MainLauncher = true)]
-    public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsApplicationActivity
+    public class MainActivity : FormsApplicationActivity
     {
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
 
-            Xamarin.Forms.Forms.Init(this, bundle);
+            Forms.Init(this, bundle);
 
-            // SetPage(App.GetMainPage()); This is now obsolete
-            LoadApplication(new MyWeather.App());
+            LoadApplication(new App());
         }
     }
 }

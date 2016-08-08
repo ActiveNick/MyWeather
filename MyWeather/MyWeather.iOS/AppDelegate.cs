@@ -1,11 +1,10 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-
 using Foundation;
 using UIKit;
-
 using Xamarin.Forms;
+using Xamarin.Forms.Platform.iOS;
 
 namespace MyWeather.iOS
 {
@@ -13,7 +12,7 @@ namespace MyWeather.iOS
     // User Interface of the application, as well as listening (and optionally responding) to 
     // application events from iOS.
     [Foundation.Register("AppDelegate")]
-    public partial class AppDelegate : global::Xamarin.Forms.Platform.iOS.FormsApplicationDelegate
+    public partial class AppDelegate : FormsApplicationDelegate
     {
         // class-level declarations
         UIWindow window;
@@ -27,8 +26,8 @@ namespace MyWeather.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
-            global::Xamarin.Forms.Forms.Init();
-            LoadApplication(new MyWeather.App());
+            Forms.Init();
+            LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);
         }
