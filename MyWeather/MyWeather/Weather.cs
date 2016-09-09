@@ -26,6 +26,9 @@ namespace MyWeather
         public string icon { get; set; }
     }
 
+    /// <summary>
+    /// Main weather data
+    /// </summary>
     public class Main
     {
         public double temp { get; set; }
@@ -48,6 +51,12 @@ namespace MyWeather
         public int all { get; set; }
     }
 
+    /// <summary>
+    /// Root class used to deserialize base weather data from OpenWeatherMap.org.
+    /// All other classes above are child classes of WeatherRoot.
+    /// If you do not know how to generate such deserialization classes, check out
+    /// http://json2csharp.com/ and send a thank you to @ActiveNick
+    /// </summary>
     public class WeatherRoot
     {
         public Coord coord { get; set; }
