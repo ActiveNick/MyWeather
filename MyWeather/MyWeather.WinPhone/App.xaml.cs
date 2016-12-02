@@ -4,6 +4,7 @@ using System.Resources;
 using System.Windows;
 using System.Windows.Markup;
 using System.Windows.Navigation;
+using Microsoft.HockeyApp;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using MyWeather.WinPhone.Resources;
@@ -25,6 +26,8 @@ namespace MyWeather.WinPhone
         {
             // Global handler for uncaught exceptions.
             UnhandledException += Application_UnhandledException;
+
+            //Microsoft.HockeyApp.HockeyClient.Current.Configure(Settings.)
 
             // Standard XAML initialization
             InitializeComponent();

@@ -103,6 +103,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AppResources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Services\MetricsManagerService.cs" />
     <Compile Include="TextToSpeech_WinPhone.cs">
       <SubType>Code</SubType>
     </Compile>

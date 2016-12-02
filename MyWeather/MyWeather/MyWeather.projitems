@@ -10,6 +10,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)App.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\IMetricsManagerService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\Settings.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ITextToSpeech.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)OpenWeatherMapService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Weather.cs" />

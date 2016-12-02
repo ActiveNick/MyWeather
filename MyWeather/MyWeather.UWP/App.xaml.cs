@@ -14,6 +14,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Microsoft.HockeyApp;
 
 namespace MyWeather.UWP
 {
@@ -28,6 +29,8 @@ namespace MyWeather.UWP
         /// </summary>
         public App()
         {
+            Microsoft.HockeyApp.HockeyClient.Current.Configure(Settings.HockeyAppId);
+
             this.InitializeComponent();
             this.Suspending += OnSuspending;
         }

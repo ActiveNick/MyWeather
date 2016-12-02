@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Foundation;
+using HockeyApp.iOS;
 using UIKit;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
@@ -26,6 +27,11 @@ namespace MyWeather.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
+            var manager = BITHockeyManager.SharedHockeyManager;
+            manager.Configure(Settings.HockeyAppId);
+            manager.StartManager();
+            manager.Authenticator.AuthenticateInstallation(); // This line is obsolete in crash only builds (do we need it then?)
+
             Forms.Init();
             LoadApplication(new App());
 
