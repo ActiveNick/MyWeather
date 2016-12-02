@@ -8,7 +8,7 @@ using Xamarin.Forms.Xaml;
 //[assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace MyWeather
 {
-	public class App : Xamarin.Forms.Application
+	public class App : Application
     {
 		public App ()
 		{
@@ -18,6 +18,7 @@ namespace MyWeather
         protected override void OnStart()
         {
             // Handle when your app starts
+            DependencyService.Get<IMetricsManagerService>().TrackEvent("AppStarted");
         }
 
         protected override void OnSleep()

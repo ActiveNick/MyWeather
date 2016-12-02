@@ -39,10 +39,10 @@ namespace MyWeather
                 if (wr != null)
                 {
                     // Populate the labels in the form with the weather data
-                    lblTemp.Text = String.Format("Temperature: {0}°F", (int)wr.main.temp);
-                    lblTempBig.Text = String.Format("{0}°", (int)wr.main.temp);
-                    lblHighTemp.Text = String.Format("High: {0}°F", (int)wr.main.temp_max);
-                    lblLowTemp.Text = String.Format("Low: {0}°F", (int)wr.main.temp_min);
+                    lblTemp.Text = $"Temperature: {(int) wr.main.temp}°F";
+                    lblTempBig.Text = $"{(int) wr.main.temp}°";
+                    lblHighTemp.Text = $"High: {(int) wr.main.temp_max}°F";
+                    lblLowTemp.Text = $"Low: {(int) wr.main.temp_min}°F";
 
                     // TEXT-TO-SPEECH INTEGRATION
                     string greeter = "";
@@ -55,16 +55,26 @@ namespace MyWeather
                     greeter = "This is the voice of Google";
 #endif
                     // Build a message string to be spoken out loud
-                    string weatherMessageTemplate = "{0}. The current temperature in {1} is {2}°F, with a high today of {3}° and a low of {4}°.";
-                    string weatherMessage = string.Format(weatherMessageTemplate, greeter, wr.name, (int)wr.main.temp, (int)wr.main.temp_max, (int)wr.main.temp_min);
-                    // Call the Text-to-Speech Dependency service on each platform to play the weather message with the platform's speech synthesizer
+                    string weatherMessageTemplate =
+                        "{0}. The current temperature in {1} is {2}°F, with a high today of {3}° and a low of {4}°.";
+                    string weatherMessage = string.Format(weatherMessageTemplate, greeter, wr.name, (int) wr.main.temp,
+                        (int) wr.main.temp_max, (int) wr.main.temp_min);
+                    // Call the Text-to-Speech Dependency service on each platform to play the weather message with
+                    // the platform's speech synthesizer
                     DependencyService.Get<ITextToSpeech>().Speak(weatherMessage);
+
+                    DependencyService.Get<IMetricsManagerService>().TrackEvent("GetWeather");
+                }
+                else
+                {
+                    DependencyService.Get<IMetricsManagerService>().TrackEvent("NullWeather");
                 }
 
             }
             catch (Exception ex)
             {
-                //TO DO: Log the exception somewhere
+                //TO DO: Send specific exception data to HockeyApp
+                DependencyService.Get<IMetricsManagerService>().TrackEvent("GetWeatherError");
                 await DisplayAlert("Error", "Unable to retrieve weather data. Please verify the city name and your Internet connection and try again.", "Ok");
             }
         }
