@@ -7,12 +7,12 @@ using Xamarin.Forms;
 
 namespace MyWeather
 {
-	public partial class WeatherXaml : ContentPage
+	public partial class WeatherPage : ContentPage
     {
         // Weather Service Object to call the OpenWeatherMap API
         OpenWeatherMapService owms;
 
-		public WeatherXaml()
+		public WeatherPage()
 		{
 			InitializeComponent();
 

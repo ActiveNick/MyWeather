@@ -12,7 +12,7 @@ namespace MyWeather
     {
 		public App ()
 		{
-            MainPage = new WeatherXaml();
+            MainPage = new WeatherPage();
 		}
 
         protected override void OnStart()

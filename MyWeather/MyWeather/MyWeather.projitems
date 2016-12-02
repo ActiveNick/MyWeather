@@ -15,13 +15,13 @@
     <Compile Include="$(MSBuildThisFileDirectory)ITextToSpeech.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)OpenWeatherMapService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Weather.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)WeatherXaml.xaml.cs">
-      <DependentUpon>WeatherXaml.xaml</DependentUpon>
+    <Compile Include="$(MSBuildThisFileDirectory)WeatherPage.xaml.cs">
+      <DependentUpon>WeatherPage.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)WeatherXaml.xaml">
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)WeatherPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
