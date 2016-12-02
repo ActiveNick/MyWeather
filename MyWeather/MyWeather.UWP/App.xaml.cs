@@ -29,7 +29,9 @@ namespace MyWeather.UWP
         /// </summary>
         public App()
         {
-            Microsoft.HockeyApp.HockeyClient.Current.Configure(Settings.HockeyAppId);
+            // To learn more about HockeyApp integration on Windows, read
+            // https://github.com/bitstadium/HockeySDK-Windows
+            HockeyClient.Current.Configure(Settings.HockeyAppId);
 
             this.InitializeComponent();
             this.Suspending += OnSuspending;
@@ -45,7 +47,7 @@ namespace MyWeather.UWP
 #if DEBUG
             if (System.Diagnostics.Debugger.IsAttached)
             {
-                this.DebugSettings.EnableFrameRateCounter = true;
+                this.DebugSettings.EnableFrameRateCounter = false;
             }
 #endif
             Frame rootFrame = Window.Current.Content as Frame;

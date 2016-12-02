@@ -27,7 +27,9 @@ namespace MyWeather.WinPhone
             // Global handler for uncaught exceptions.
             UnhandledException += Application_UnhandledException;
 
-            //Microsoft.HockeyApp.HockeyClient.Current.Configure(Settings.)
+            // To learn more about HockeyApp integration on Windows, read
+            // https://github.com/bitstadium/HockeySDK-Windows
+            Microsoft.HockeyApp.HockeyClient.Current.Configure(Settings.HockeyAppId);
 
             // Standard XAML initialization
             InitializeComponent();
@@ -42,7 +44,7 @@ namespace MyWeather.WinPhone
             if (Debugger.IsAttached)
             {
                 // Display the current frame rate counters.
-                Application.Current.Host.Settings.EnableFrameRateCounter = true;
+                Application.Current.Host.Settings.EnableFrameRateCounter = false;
 
                 // Show the areas of the app that are being redrawn in each frame.
                 //Application.Current.Host.Settings.EnableRedrawRegions = true;
@@ -62,8 +64,10 @@ namespace MyWeather.WinPhone
 
         // Code to execute when the application is launching (eg, from Start)
         // This code will not execute when the application is reactivated
-        private void Application_Launching(object sender, LaunchingEventArgs e)
+        private async void Application_Launching(object sender, LaunchingEventArgs e)
         {
+            // This extra call is only required on WinRT, Windows Phone or WPF
+            await HockeyClient.Current.SendCrashesAsync(sendWithoutAsking: true);
         }
 
         // Code to execute when the application is activated (brought to foreground)

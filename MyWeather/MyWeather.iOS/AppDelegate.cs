@@ -27,6 +27,8 @@ namespace MyWeather.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
+            // To learn more about HockeyApp integration on Xamarin.iOS, read
+            // https://support.hockeyapp.net/kb/client-integration-cross-platform/how-to-integrate-hockeyapp-with-xamarin
             var manager = BITHockeyManager.SharedHockeyManager;
             manager.Configure(Settings.HockeyAppId);
             manager.StartManager();

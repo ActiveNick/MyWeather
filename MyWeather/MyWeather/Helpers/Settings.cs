@@ -13,8 +13,6 @@ namespace MyWeather
         public static string HockeyAppId = "{INSERT YOUR ANDROID HOCKEYAPP ID HERE}";
 #elif __IOS__
         public static string HockeyAppId = "{INSERT YOUR iOS HOCKEYAPP ID HERE}";
-#elif __WINDOWS_PHONE
-        public static string HockeyAppId = "{INSERT YOUR WINDOWS PHONE HOCKEYAPP ID HERE}";
 #endif
 
     }

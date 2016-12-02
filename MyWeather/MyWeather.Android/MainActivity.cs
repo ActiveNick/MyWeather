@@ -20,11 +20,12 @@ namespace MyWeather.Droid
         {
             base.OnCreate(bundle);
 
+            // To learn more about HockeyApp integration on Xamarin.Android, read
+            // https://support.hockeyapp.net/kb/client-integration-cross-platform/how-to-integrate-hockeyapp-with-xamarin
             CrashManager.Register(this, Settings.HockeyAppId);
 
             MetricsManager.Register(Application, Settings.HockeyAppId);
-            // If HockeyApp is not reporting metrics for Android, please uncomment the following line
-            //MetricsManager.EnableUserMetrics();  // Need to see if Paul is right and this is required
+            MetricsManager.EnableUserMetrics();
 
             Forms.Init(this, bundle);
 

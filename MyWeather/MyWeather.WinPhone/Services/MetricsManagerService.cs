@@ -15,6 +15,5 @@ namespace MyWeather.WinPhone
         {
             HockeyClient.Current.TrackEvent(eventName);
         }
-    {
     }
 }
